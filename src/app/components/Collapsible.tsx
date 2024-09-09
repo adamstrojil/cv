@@ -19,8 +19,8 @@ export const Collapsible = ({
 
     const dynamicContainerStyles = { maxHeight: isCollapsed ? '128px' : `${elementHeight}px` }; // Can't use Tailwind because there's no way to pass the dynamic height to it
     const contentOverlayClassName = `${
-        isCollapsed ? 'opacity-100 delay-0 duration-300 ' : 'opacity-0 delay-700 duration-1000 h-0'
-    } transition-all absolute flex justify-center bottom-0 left-0 w-full text-center m-0 px-30 bg-gradient-to-t from-white from-20% h-64`;
+        isCollapsed ? 'opacity-100 delay-0 duration-300 h-64' : 'opacity-0 delay-700 duration-1000 h-0'
+    } transition-all absolute flex justify-center bottom-0 left-0 w-full text-center m-0 px-30 bg-gradient-to-t from-white from-20%`;
 
     return (
         <div
