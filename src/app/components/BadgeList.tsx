@@ -1,17 +1,16 @@
-import { Badge } from "../components";
+import { Badge } from '../components';
+import { BadgeProps } from './Badge';
 
 type Props = {
-  badges: Array<{text: string, variant: "primary" | "secondary"}>;
+    badges: Array<BadgeProps>;
 };
 
-export function BadgeList({ badges }: Props) {
-  return (
+export const BadgeList = ({ badges }: Props) => (
     <ul className="list-none inline-flex flex-wrap gap-x-2 gap-y-2">
-      {badges.map((badge) => (
-        <li key={badge.text}>
-          <Badge text={badge.text} variant={badge.variant} />
-        </li>
-      ))}
+        {badges.map(({ text, variant }) => (
+            <li key={text}>
+                <Badge text={text} variant={variant} />
+            </li>
+        ))}
     </ul>
-  );
-}
+);

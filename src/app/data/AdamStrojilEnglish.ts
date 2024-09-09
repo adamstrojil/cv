@@ -83,7 +83,7 @@ export const DATA: PersonData = {
                 { text: 'ISTQB', variant: 'secondary' },
             ],
             descriptionParagraphs: [
-                'In my first working experience of a software test engineer, I was using Cypress to conduct end-to-end and regression tests. I worked on two projects, an online tabloid magazine and an e-shop selling electronics.  During this time, I gained valuable experience in the software testing, development processes and teamwork. I also completed my ISTQB Foundation level certification on this position.',
+                'In my first working experience of a software test engineer, I used Cypress to conduct end-to-end and regression tests. I worked on two projects, an online tabloid magazine and an e-shop selling electronics.  During this time, I gained valuable experience in the software testing, development processes and teamwork. I also completed my ISTQB Foundation level certification on this position.',
             ],
         },
         {
@@ -101,7 +101,7 @@ export const DATA: PersonData = {
                 { text: 'social awareness', variant: 'secondary' },
             ],
             descriptionParagraphs: [
-                'As an ESN member I was supporting incoming international students and helping them adjust to life in Zlin. I greatly improved my language and social skills, whilst making friends from all around the world. I helped with organizing and managing various inclusion events. I also provided support to students during the COVID-19 crisis, for which I was awarded with a scholarship by the university.',
+                'As an ESN member I supported incoming international students and helping them adjust to life in Zlin. I greatly improved my language and social skills, whilst making friends from all around the world. I helped with organizing and managing various inclusion events. I also provided support to students during the COVID-19 crisis, for which I was awarded with a scholarship by the university.',
             ],
         },
     ],
@@ -111,7 +111,7 @@ export const DATA: PersonData = {
             type: 'Ta daa!',
             since: '2023-10',
             descriptionParagraphs: [
-                'This project exists mainly so I could get some hands-on experience with Next.js, tailwindCSS and css grid, but also to update and redesign my old CV.',
+                'Main purpose of this project was to get some hands-on experience with Next.js, tailwindCSS and css grid. Simultaneously, I wanted to build something useful, so I took the opportunity to update and redesign my CV.',
             ],
             technologies: [
                 { text: 'typescript', variant: 'primary' },

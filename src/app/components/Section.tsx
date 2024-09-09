@@ -8,7 +8,7 @@ type Props = {
 
 export const Section = ({ heading, children }: Props) => (
     <section className="my-10 last:mb-0 bg-white">
-        {heading && <SectionHeading text={heading} />}
+        {heading && <SectionHeading>{heading}</SectionHeading>}
         {children}
     </section>
 );

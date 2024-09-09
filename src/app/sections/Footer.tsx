@@ -1,17 +1,8 @@
-import React from "react";
+import React from 'react';
+import { Link } from '../components/Link';
 
-export function Footer({}) {
-  return (
+export const Footer = () => (
     <footer className="text-right mt-2 text-gray-700">
-      Design inspired by{" "}
-      <a
-        href="https://sanatrath.com/"
-        target="_blank"
-        className="underline text-blue-700"
-      >
-        Sanat Rath
-      </a>
-      .
+        Design inspired by <Link href="https://sanatrath.com/">Sanat Rath</Link>.
     </footer>
-  );
-}
+);

@@ -12,11 +12,11 @@ type Props = {
     numberOfVisibleEntries?: number;
 };
 
-export function CollapsibleSection({
+export const CollapsibleSection = ({
     entries,
     heading,
     numberOfVisibleEntries = DEFAULT_NUMBER_OF_VISIBLE_ENTRIES,
-}: Props) {
+}: Props) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
     const toggleCollapsed = () => setIsCollapsed((prev) => !prev);
@@ -48,4 +48,4 @@ export function CollapsibleSection({
             )}
         </Section>
     );
-}
+};

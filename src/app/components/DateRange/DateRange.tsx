@@ -7,12 +7,12 @@ export type DateRangeProps = {
     isSingleDate?: boolean;
 };
 
-export function DateRange({
+export const DateRange = ({
     since: sinceRawValue,
     until: untilRawValue,
     isDurationVisible = false,
     isSingleDate = false,
-}: DateRangeProps) {
+}: DateRangeProps) => {
     const since = getSinceDate(sinceRawValue);
     const until = getUntilDate(untilRawValue, isSingleDate);
     const duration = calculateMonthDifference(sinceRawValue, untilRawValue);
@@ -25,4 +25,4 @@ export function DateRange({
             {isDurationVisible && `(${duration})`}
         </div>
     );
-}
+};

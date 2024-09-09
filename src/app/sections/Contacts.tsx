@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 
-import { IconLink, Section } from '../components';
+import { IconLink, Section, SectionHeading } from '../components';
 
 type Props = {
     github: string;
@@ -10,6 +10,7 @@ type Props = {
 
 export const Contacts = ({ github, linkedIn }: Props) => (
     <Section>
+        <SectionHeading isScreenReaderOnly>Contacts</SectionHeading>
         <address className="not-italic font-medium text-lg mt-1 flex flex-col">
             <IconLink
                 icon={<FaGithub aria-hidden />}

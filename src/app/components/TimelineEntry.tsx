@@ -1,5 +1,5 @@
 import { BadgeList, BoxHeading, DateRange } from '../components';
-import { Props as BadgeProps } from './Badge';
+import { BadgeProps } from './Badge';
 import { DateRangeProps } from './DateRange';
 import { Link } from './Link';
 
@@ -15,7 +15,7 @@ export type TimelineEntryProps = {
 export const TimelineEntry = ({
     headingPrimaryText,
     headingSecondaryText,
-    descriptionParagraphs,
+    descriptionParagraphs = [],
     dateRange,
     badges,
     linkUrl,
@@ -32,12 +32,11 @@ export const TimelineEntry = ({
                 <BadgeList badges={badges} />
             </div>
         )}
-        {descriptionParagraphs?.length &&
-            descriptionParagraphs.map((paragraph) => (
-                <p key={crypto.randomUUID()} className="mt-4">
-                    {paragraph}
-                </p>
-            ))}
+        {descriptionParagraphs.map((paragraph, index) => (
+            <p key={index} className="mt-4">
+                {paragraph}
+            </p>
+        ))}
         {linkUrl && (
             <p className="flex gap-1 mt-3 flex-wrap">
                 Available at:
