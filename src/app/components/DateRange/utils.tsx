@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 const YEAR_AND_MONTH_REGEX = /^\d{4}-\d{2}$/; //e.g. "2023-12"
+const NON_BREAKING_SPACE = '\xa0';
 
 const parseDate = (dateString: string) => {
     const [year, month] = dateString.split('-').map(Number);
@@ -21,7 +22,7 @@ const formatMonthYear = (dateString: string) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     const monthName = months[parseInt(month, 10) - 1];
-    const formattedDate = `${monthName} ${year}`;
+    const formattedDate = `${monthName}${NON_BREAKING_SPACE}${year}`;
 
     return formattedDate;
 };

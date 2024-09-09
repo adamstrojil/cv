@@ -18,11 +18,11 @@ export const DateRange = ({
     const duration = calculateMonthDifference(sinceRawValue, untilRawValue);
 
     return (
-        <div className="text-neutral-400 uppercase font-mono flex gap-2">
+        <div className="text-neutral-400 uppercase font-mono flex flex-wrap gap-2">
             {since}
             {until && '-'}
             {until}
-            {isDurationVisible && `(${duration})`}
+            {isDurationVisible && <span className='text-nowrap'>({duration})</span>}
         </div>
     );
 };

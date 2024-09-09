@@ -241,13 +241,13 @@ export const DATA: PersonData = {
             skills: [
                 'flexibility',
                 'responsibility',
-                'dedication',
-                'open-minded',
+                'independence',
                 'fairplay',
                 'teamwork',
-                'independence',
                 'humour',
-                'curiousity',
+                'dedication',
+                'curiosity',
+                'open-mindedness',
             ],
         },
         {
