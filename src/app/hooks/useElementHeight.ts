@@ -1,8 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 
+const mobileRegex = /iphone|ipad|ipod|android|blackberry|windows phone/g;
+
 export const useElementHeight = () => {
     const [elementHeight, setElementHeight] = useState<number | null>(null);
     const elementRef = useRef<HTMLDivElement | null>(null);
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = mobileRegex.test(userAgent);
 
     const calculateHeight = () => {
         if (elementRef.current) {
@@ -22,12 +27,18 @@ export const useElementHeight = () => {
 
     useEffect(() => {
         calculateHeight();
+
+        if (isMobile) {
+            //On mobile, the resize event is buggy, because it's triggered by (dis)appearing url bar mid-scroll
+            return;
+        }
+
         window.addEventListener('resize', calculateHeight);
 
         return () => {
             window.removeEventListener('resize', calculateHeight);
         };
-    }, []);
+    }, [isMobile]);
 
     return { elementHeight, elementRef };
 };
