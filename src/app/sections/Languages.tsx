@@ -1,5 +1,5 @@
+import { Language } from '@/app/data/types';
 import { LanguagesBox, Section } from '../components';
-import { Language } from '../data/types';
 
 type Props = {
     languages: Array<Language>;

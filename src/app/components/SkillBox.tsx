@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { SkillSet } from '../data/types';
+import { SkillSet } from '@/app/data/types';
 
 type Props = {
     skillset: SkillSet;

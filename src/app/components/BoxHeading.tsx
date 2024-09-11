@@ -1,5 +1,3 @@
-import React from 'react';
-
 type Props = { primaryText: string; secondaryText: string };
 
 export const BoxHeading = ({ primaryText, secondaryText }: Props) => (

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 type Props = {
-    icon: ReactNode;
     to: string;
+    icon: ReactNode;
     children: ReactNode;
     ariaLabel?: string;
 };

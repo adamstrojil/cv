@@ -1,6 +1,6 @@
-import { Project } from '../data/types';
-import { CollapsibleSection } from './CollapsibleSection';
-import { getPersonalProjectEntryPropsFromData } from '../utils';
+import { Project } from '@/app/data/types';
+import { CollapsibleSection } from '../components';
+import { getPersonalProjectEntryPropsFromData } from './utils';
 
 type Props = {
     personalProjects: Array<Project>;

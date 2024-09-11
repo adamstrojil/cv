@@ -1,6 +1,4 @@
-import React from 'react';
-
-export type BadgeVariant = 'primary' | 'secondary';
+type BadgeVariant = 'primary' | 'secondary';
 
 export type BadgeProps = {
     text: string;

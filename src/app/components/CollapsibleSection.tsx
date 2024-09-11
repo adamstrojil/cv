@@ -1,14 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { Collapsible, Section, TimelineEntry } from '../components';
-import { TimelineEntryProps } from '../components/TimelineEntry';
+
+import { TimelineEntryWithId } from '../sections/types';
+import { Section } from './layout/Section';
+import { TimelineEntry } from './TimelineEntry';
+import { Collapsible } from './Collapsible';
 
 const DEFAULT_NUMBER_OF_VISIBLE_ENTRIES = 1;
 
 type Props = {
     heading: string;
-    entries: Array<TimelineEntryProps & { id: string }>;
+    entries: Array<TimelineEntryWithId>;
     numberOfVisibleEntries?: number;
 };
 

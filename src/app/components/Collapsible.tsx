@@ -1,6 +1,7 @@
 'use client';
 import { ReactNode } from 'react';
-import { useElementHeight } from '../hooks/useElementHeight';
+
+import { useElementHeight } from '../hooks';
 
 type CollapsibleProps = {
     children: ReactNode;

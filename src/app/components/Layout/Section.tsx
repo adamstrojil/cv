@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { SectionHeading } from '../components';
+
+import { SectionHeading } from '../SectionHeading';
 
 type Props = {
     heading?: string;

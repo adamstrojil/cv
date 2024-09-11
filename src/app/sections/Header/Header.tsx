@@ -1,6 +1,7 @@
 import { Contacts as ContactsType } from '@/app/data/types';
-import { TwoColumnLayout } from '../components';
-import { Title, Contacts } from '.';
+
+import { TwoColumnLayout } from '../../components';
+import { Contacts, Title } from './components';
 
 type Props = {
     name: string;

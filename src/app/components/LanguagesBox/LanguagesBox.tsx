@@ -1,4 +1,5 @@
-import { Languages } from '../../data/types';
+import { Languages } from '@/app/data/types';
+
 import { divideLanguagesByProfiency } from './utils';
 import { LanguageList } from './LanguageList';
 
@@ -7,12 +8,12 @@ type Props = {
 };
 
 export const LanguagesBox = ({ languages }: Props) => {
-    const { primaryLanguages, secondaryLanguages } = divideLanguagesByProfiency(languages);
+    const { primary, secondary } = divideLanguagesByProfiency(languages);
 
     return (
         <div className="flex flex-row gap-8">
-            <LanguageList languages={primaryLanguages} category="primary" />
-            <LanguageList languages={secondaryLanguages} category="secondary" />
+            <LanguageList languages={primary} category="primary" />
+            <LanguageList languages={secondary} category="secondary" />
         </div>
     );
 };

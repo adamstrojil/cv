@@ -1,4 +1,4 @@
-import { Badge } from '../components';
+import { Badge } from '../components/Badge';
 import { BadgeProps } from './Badge';
 
 type Props = {

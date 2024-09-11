@@ -49,7 +49,6 @@ export type Skills = Array<SkillSet>;
 export type SkillSet = { name: string; skills: Array<string> };
 
 export type Languages = Array<Language>;
-
 export type Language = {
     language: string;
     level: string;

@@ -1,6 +1,6 @@
-import { Education as EducationType } from '../data/types';
-import { getEducationEntryPropsFromData } from '../utils';
-import { CollapsibleSection } from './CollapsibleSection';
+import { Education as EducationType } from '@/app/data/types';
+import { CollapsibleSection } from '../components';
+import { getEducationEntryPropsFromData } from './utils';
 
 type Props = {
     educations: Array<EducationType>;

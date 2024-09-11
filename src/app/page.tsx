@@ -1,4 +1,4 @@
-import { DATA } from './data/AdamStrojilEnglish';
+import { DATA } from '@/app/data/AdamStrojilEnglish';
 import { Page, Main, TwoColumnLayout } from './components';
 import { Header, Languages, Skills, Footer, WorkExperience, Education, PersonalProjects } from './sections';
 

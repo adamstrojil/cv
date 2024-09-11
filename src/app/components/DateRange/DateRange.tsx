@@ -16,13 +16,14 @@ export const DateRange = ({
     const since = getSinceDate(sinceRawValue);
     const until = getUntilDate(untilRawValue, isSingleDate);
     const duration = calculateMonthDifference(sinceRawValue, untilRawValue);
+    const formattedDuration = `(${duration})`;
 
     return (
         <div className="text-neutral-400 uppercase font-mono flex flex-wrap gap-2">
             {since}
             {until && '-'}
             {until}
-            {isDurationVisible && <span className='text-nowrap'>({duration})</span>}
+            {isDurationVisible && <span className="text-nowrap">{formattedDuration}</span>}
         </div>
     );
 };

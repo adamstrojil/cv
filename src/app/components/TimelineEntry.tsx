@@ -1,6 +1,7 @@
-import { BadgeList, BoxHeading, DateRange } from '../components';
 import { BadgeProps } from './Badge';
-import { DateRangeProps } from './DateRange';
+import { BadgeList } from './BadgeList';
+import { BoxHeading } from './BoxHeading';
+import { DateRange, DateRangeProps } from './DateRange';
 import { Link } from './Link';
 
 export type TimelineEntryProps = {

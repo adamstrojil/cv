@@ -1,6 +1,5 @@
-import React from 'react';
-import { Skills as SkillsType } from '../data/types';
-import { Section, SkillBox } from '../components';
+import { Skills as SkillsType } from '@/app/data/types';
+import { SkillBox, Section } from '../components';
 
 type Props = {
     skills: SkillsType;

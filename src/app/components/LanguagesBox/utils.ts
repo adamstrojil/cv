@@ -1,19 +1,21 @@
-import { Languages } from '@/app/data/types';
+import { Language, Languages } from '@/app/data/types';
 
-type LanguageByCategory = {
-    primaryLanguages: Languages;
-    secondaryLanguages: Languages;
+type LanguagesByCategory = {
+    primary: Languages;
+    secondary: Languages;
 };
 
-export const divideLanguagesByProfiency = (languages: Languages): LanguageByCategory => {
-    const dividedLanguages: LanguageByCategory = { primaryLanguages: [], secondaryLanguages: [] };
+const languagesReducer = (languagesByCategory: LanguagesByCategory, language: Language) => {
+    if (language.level.startsWith('c')) {
+        languagesByCategory.primary.push(language);
+    } else {
+        languagesByCategory.secondary.push(language);
+    }
+    return languagesByCategory;
+};
 
-    return languages.reduce((acc, language) => {
-        if (language.level.startsWith('c')) {
-            acc.primaryLanguages.push(language);
-        } else {
-            acc.secondaryLanguages.push(language);
-        }
-        return acc;
-    }, dividedLanguages);
+export const divideLanguagesByProfiency = (languages: Languages): LanguagesByCategory => {
+    const dividedLanguages: LanguagesByCategory = { primary: [], secondary: [] };
+
+    return languages.reduce(languagesReducer, dividedLanguages);
 };

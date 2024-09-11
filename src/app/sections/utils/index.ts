@@ -1,7 +1,5 @@
-import { TimelineEntryProps } from '../components/TimelineEntry';
-import { Education, WorkExperience, Project } from '../data/types';
-
-type TimelineEntryWithId = TimelineEntryProps & { id: string };
+import { Education, WorkExperience, Project } from '@/app/data/types';
+import { TimelineEntryWithId } from '../types';
 
 export const getEducationEntryPropsFromData = ({
     since,

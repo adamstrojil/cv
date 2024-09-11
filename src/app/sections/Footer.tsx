@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from '../components/Link';
+import { Link } from '../components';
 
 const NO_BREAK_SPACE = '\xa0'; //TODO refactor with css
 

@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 
-import { IconLink, Section, SectionHeading } from '../components';
+import { IconLink, Section, SectionHeading } from '../../../components';
 
 type Props = {
     github: string;
