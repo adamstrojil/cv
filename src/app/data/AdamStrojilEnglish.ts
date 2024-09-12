@@ -181,8 +181,8 @@ export const DATA: PersonData = {
             descriptionParagraphs: [
                 "I spent two semesters of my master's studies at prestigious private Yaşar University in İzmir, Turkey. The courses I took included Design Patterns, Software Project Management, Low level programming and Economics.",
             ],
-            since: '2021-01',
-            until: '2022-01',
+            since: '2022-01',
+            until: '2023-01',
         },
         {
             school: 'TBU Zlin',
