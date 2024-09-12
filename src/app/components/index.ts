@@ -7,7 +7,7 @@ export { DateRange } from './DateRange';
 export { IconLink } from './IconLink';
 export { LanguagesBox } from './LanguagesBox';
 export { Link } from './Link';
-export { Main, Page, Section, TwoColumnLayout } from './layout';
+export { Main, Page, Section, TwoColumnLayout } from './layoutTEMP';
 export { SectionHeading } from './SectionHeading';
 export { SkillBox } from './SkillBox';
 export { TimelineEntry } from './TimelineEntry';
