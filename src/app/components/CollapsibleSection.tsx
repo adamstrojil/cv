@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { TimelineEntryWithId } from '../sections/types';
-import { Section } from './layoutTEMP/Section';
+import { Section } from './layout/Section';
 import { TimelineEntry } from './TimelineEntry';
 import { Collapsible } from './Collapsible';
 
