@@ -21,7 +21,7 @@ export const TimelineEntry = ({
     badges,
     linkUrl,
 }: TimelineEntryProps) => (
-    <article className="mb-10 last:mb-0">
+    <article className="mb-10 last:mb-0 break-inside-avoid">
         <BoxHeading primaryText={headingPrimaryText} secondaryText={headingSecondaryText} />
         {dateRange && (
             <div className="mt-2 ml-0.5">

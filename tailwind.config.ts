@@ -23,8 +23,17 @@ const config: Config = {
       lineHeight: {
         "11": "2.75rem",
       },
+      pageBreakInside: ['avoid']
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }:any) {
+      addUtilities({
+        '.break-inside-avoid': {
+          'page-break-inside': 'avoid'
+        }
+      }, ['responsive', 'print']);
+    }
+  ],
 };
 export default config;

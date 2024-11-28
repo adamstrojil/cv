@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { TimelineEntryWithId } from '../sections/types';
 import { Section } from './layout/Section';
@@ -22,6 +22,20 @@ export const CollapsibleSection = ({
 }: Props) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
+    // Expand all sections before printing and revert afterward
+    useEffect(() => {
+        const handleBeforePrint = () => setIsCollapsed(false);
+        const handleAfterPrint = () => setIsCollapsed(true);
+
+        window.addEventListener('beforeprint', handleBeforePrint);
+        window.addEventListener('afterprint', handleAfterPrint);
+
+        return () => {
+            window.removeEventListener('beforeprint', handleBeforePrint);
+            window.removeEventListener('afterprint', handleAfterPrint);
+        };
+    }, []);
+
     const toggleCollapsed = () => setIsCollapsed((prev) => !prev);
 
     const alwaysVisibleEntries = entries.slice(0, numberOfVisibleEntries);
@@ -35,6 +49,8 @@ export const CollapsibleSection = ({
 
     return (
         <Section heading={heading}>
+            {/* <button onClick={()=>window.print()}>Print</button> */}
+
             {alwaysVisibleEntries.map(({ id, ...entryProps }) => (
                 <TimelineEntry key={id} {...entryProps} />
             ))}

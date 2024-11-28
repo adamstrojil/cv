@@ -34,7 +34,7 @@ export const Collapsible = ({
             <div className="flex justify-center">
                 <button
                     onClick={onToggleCollapsed}
-                    className="absolute bottom-0 whitespace-nowrap inline-flex items-center underline text-md font-medium text-neutral-500"
+                    className="absolute bottom-0 whitespace-nowrap inline-flex items-center underline text-md font-medium text-neutral-500 print:hidden"
                 >
                     {isCollapsed ? textWhenCollapsed : textWhenExpanded}
                 </button>
