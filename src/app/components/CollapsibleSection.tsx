@@ -6,7 +6,7 @@ import { TimelineEntryWithId } from '../sections/types';
 import { Section } from './layout/Section';
 import { TimelineEntry } from './TimelineEntry';
 import { Collapsible } from './Collapsible';
-import { PrinterContext } from '../[locale]/page';
+import { PrinterContext } from '../context/PrinterContext';
 
 const DEFAULT_NUMBER_OF_VISIBLE_ENTRIES = 1;
 
@@ -22,7 +22,8 @@ export const CollapsibleSection = ({
     numberOfVisibleEntries = DEFAULT_NUMBER_OF_VISIBLE_ENTRIES,
 }: Props) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
-    const isPrinting = useContext(PrinterContext);
+    const { isPrinting } = useContext(PrinterContext);
+    console.log('isPrinting: ', isPrinting);
 
     // Expand all sections before printing and revert afterward
     useEffect(() => {

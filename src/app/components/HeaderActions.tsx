@@ -1,14 +1,14 @@
 import { FaPrint } from 'react-icons/fa';
 import { IconLink } from './IconLink';
 import { useParams } from 'next/navigation';
+import { useContext } from 'react';
+import { PrinterContext } from '../context/PrinterContext';
+import { flushSync } from 'react-dom';
 
-type Props = {
-    setIsPrinting: (isPrinting: boolean) => void;
-};
-
-export const HeaderActions = ({ setIsPrinting }: Props) => {
+export const HeaderActions = () => {
     const params = useParams();
     const locale = params?.locale || 'en';
+    const { setIsPrinting } = useContext(PrinterContext);
 
     return (
         <div className="flex justify-end relative gap-5 -top-12 -right-10 -mb-6 print:hidden">
@@ -24,12 +24,12 @@ export const HeaderActions = ({ setIsPrinting }: Props) => {
             <button
                 className="flex gap-2 items-center justify-end underline"
                 onClick={() => {
-                    setIsPrinting(true);
-                    //Hackish way to "postpone" the printing in event loop until after the isPrinting state is updated
-                    queueMicrotask(() => {
-                        window.print();
-                        setIsPrinting(false);
+                    flushSync(() => {
+                        // forcing the update so it happens before the print is invoked
+                        setIsPrinting(true);
                     });
+                    window.print();
+                    setIsPrinting(false);
                 }}
             >
                 <FaPrint /> Print
