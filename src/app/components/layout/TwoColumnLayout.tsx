@@ -7,7 +7,7 @@ type Props = {
 
 export const TwoColumnLayout = ({ main, aside }: Props) => (
     <>
-        <div className="col-span-5 md:col-span-3">{main}</div>
-        <div className="col-span-5 md:col-span-2">{aside}</div>
+        <div className={`col-span-5 md:col-span-3 print:col-span-3`}>{main}</div>
+        <div className={`col-span-5 md:col-span-2 print:col-span-2`}>{aside}</div>
     </>
 );

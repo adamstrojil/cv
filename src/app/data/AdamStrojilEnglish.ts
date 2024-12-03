@@ -12,7 +12,7 @@ export const DATA: PersonData = {
         {
             company: 'KOALA42',
             since: '2023-11',
-            until: '',
+            until: '2024-12',
             role: 'React.js developer',
             technologies: [
                 { text: 'react', variant: 'primary' },

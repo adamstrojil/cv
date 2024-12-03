@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { TimelineEntryWithId } from '../sections/types';
 import { Section } from './layout/Section';
 import { TimelineEntry } from './TimelineEntry';
 import { Collapsible } from './Collapsible';
+import { PrinterContext } from '../[locale]/page';
 
 const DEFAULT_NUMBER_OF_VISIBLE_ENTRIES = 1;
 
@@ -21,6 +22,7 @@ export const CollapsibleSection = ({
     numberOfVisibleEntries = DEFAULT_NUMBER_OF_VISIBLE_ENTRIES,
 }: Props) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+    const isPrinting = useContext(PrinterContext);
 
     // Expand all sections before printing and revert afterward
     useEffect(() => {
@@ -44,19 +46,17 @@ export const CollapsibleSection = ({
 
     const toggleButtonText = {
         textWhenCollapsed: `see all (${collapsibleEntries.length} more)`,
-        textWhenExpanded: 'show less',
+        textWhenExpanded: 'see latest only',
     };
 
     return (
         <Section heading={heading}>
-            {/* <button onClick={()=>window.print()}>Print</button> */}
-
             {alwaysVisibleEntries.map(({ id, ...entryProps }) => (
                 <TimelineEntry key={id} {...entryProps} />
             ))}
             {hasCollapsibleEntries && (
                 <Collapsible
-                    isCollapsed={isCollapsed}
+                    isCollapsed={isPrinting ? false : isCollapsed}
                     toggleButtonText={toggleButtonText}
                     onToggleCollapsed={toggleCollapsed}
                 >

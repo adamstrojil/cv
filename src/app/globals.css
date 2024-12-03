@@ -27,8 +27,35 @@ body {
     padding: 2rem 1rem;
 }
 
-/* @media print {
-    @page {
-        size: A3;
+@media print {
+    html {
+        font-size: 11px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
-} */
+
+    body {
+        padding: 0;
+        width: 21cm !important;
+        background: white;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    #page {
+        box-shadow: none;
+    }
+
+    @page {
+        size: A4;
+        margin-top: 10mm;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @page :first {
+        margin-top: 0;
+    }
+}

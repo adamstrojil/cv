@@ -10,4 +10,5 @@ export { Link } from './Link';
 export { Main, Page, Section, TwoColumnLayout } from './layout';
 export { SectionHeading } from './SectionHeading';
 export { SkillBox } from './SkillBox';
+export { HeaderActions } from './HeaderActions';
 export { TimelineEntry } from './TimelineEntry';

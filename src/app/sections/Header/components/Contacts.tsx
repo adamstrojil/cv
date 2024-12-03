@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const Contacts = ({ github, linkedIn }: Props) => (
-    <Section>
+    <section className='flex items-end h-full'>
         <SectionHeading isScreenReaderOnly>Contacts</SectionHeading>
         <address className="not-italic font-medium text-lg mt-1 flex flex-col">
             <IconLink
@@ -30,5 +30,5 @@ export const Contacts = ({ github, linkedIn }: Props) => (
                 <FaLocationDot /> Zlín, Czechia
             </span>
         </address>
-    </Section>
+    </section >
 );

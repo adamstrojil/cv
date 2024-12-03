@@ -2,6 +2,7 @@
 import { ReactNode } from 'react';
 
 import { useElementHeight } from '../hooks';
+import { FaAngleUp } from 'react-icons/fa6';
 
 type CollapsibleProps = {
     children: ReactNode;
@@ -17,16 +18,14 @@ export const Collapsible = ({
     onToggleCollapsed,
 }: CollapsibleProps) => {
     const { elementHeight, elementRef } = useElementHeight();
-
-    const dynamicContainerStyles = { maxHeight: isCollapsed ? '128px' : `${elementHeight}px` }; // Can't use Tailwind because there's no way to pass the dynamic height to it
     const contentOverlayClassName = `${
         isCollapsed ? 'opacity-100 delay-0 duration-300 h-64' : 'opacity-0 delay-700 duration-1000 h-0'
-    } transition-all absolute flex justify-center bottom-0 left-0 w-full text-center m-0 px-30 bg-gradient-to-t from-white from-20%`;
+    } transition-all absolute flex justify-center bottom-0 left-0 w-full text-center m-0 px-30 bg-gradient-to-t from-white from-20% print:hidden`;
 
     return (
         <div
             ref={elementRef}
-            style={dynamicContainerStyles}
+            style={{ maxHeight: isCollapsed ? '128px' : `${elementHeight}px` }} // Can't use Tailwind because there's no way to pass the dynamic height to it}
             className={'transition-[max-height] duration-1000 relative overflow-hidden'}
         >
             {children}
@@ -34,9 +33,16 @@ export const Collapsible = ({
             <div className="flex justify-center">
                 <button
                     onClick={onToggleCollapsed}
-                    className="absolute bottom-0 whitespace-nowrap inline-flex items-center underline text-md font-medium text-neutral-500 print:hidden"
+                    className="absolute bottom-0 whitespace-nowrap inline-flex items-center underline text-md font-medium text-neutral-500 print:hidden tra"
                 >
-                    {isCollapsed ? textWhenCollapsed : textWhenExpanded}
+                    <span className="flex gap-1 items-center">
+                        <FaAngleUp
+                            className={`mt-0.5 transition-all transform duration-500 ${
+                                isCollapsed ? '-rotate-180' : '-rotate-0'
+                            }`}
+                        />
+                        {isCollapsed ? textWhenCollapsed : textWhenExpanded}
+                    </span>
                 </button>
             </div>
         </div>
